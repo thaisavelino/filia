@@ -1,0 +1,14 @@
+
+ seu while do readline tem de parar assim que achar o \n, ai quando voce
+ chamar a funcao denovo ela comeca a ler de onde parou.. saca?
+ voce náo guarda a posicao que parou, guarda o resto do texto que ta no buffer
+ tipo:
+ - tudo o que tem depois do new line deve ser guardado no str
+-  e tudo que tem antes do new line (que é sua linha atual) guardado no line
+
+// arruma aquela funcao que ta tudo meio que cagado... 
+e cuida dos leaks. protege tudo
+tambem coloca tudo num list, pq o array nao ajudará muito
+na strjoin faz a strjoinfree.. vai ser util pra depois tambem. e protege leak
+
+* olhar o bo:nus de multiple file descriptors.
