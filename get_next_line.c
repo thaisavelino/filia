@@ -6,7 +6,7 @@
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 15:00:10 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 16:50:00 by tavelino         ###   ########.fr       */
+/*   Updated: 2018/06/06 17:25:00 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		readline(char **line, int fd)
 		rest = ft_strnew(BUFF_SIZE);
 	else if ((position = ft_strchr(rest, '\n')))
 	{
-		*position = '\0';
+		*position = '\0'; //troca \n por vazio:
 		*line = ft_strjoin(*line, rest);
 		rest = ft_strdup(position + 1);
 		return (1);
