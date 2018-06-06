@@ -6,7 +6,7 @@
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 13:04:59 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 17:45:30 by tavelino         ###   ########.fr       */
+/*   Updated: 2018/06/06 18:27:23 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
+char			*ft_strnjoin_free(char *s1, char const *s2, size_t len);
 char			*ft_strjoin_free(char *s1, char const *s2);
+char			*ft_strnjoin(char const *s1, char const *s2, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);

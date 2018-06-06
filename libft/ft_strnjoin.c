@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 17:58:00 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 17:58:04 by tavelino         ###   ########.fr       */
+/*   Created: 2018/06/06 17:58:39 by tavelino          #+#    #+#             */
+/*   Updated: 2018/06/06 18:28:34 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strjoin_free(char *s1, char const *s2)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t len)
 {
-	char	*str_concat;
-	size_t	len;
-	size_t	i;
-	size_t	j;
+	char	*str;
 
-	if (s1 && s2)
-	{
-		len = ft_strlen(s1) + ft_strlen(s2) + 1;
-		i = -1;
-		j = 0;
-		if (!(str_concat = (char *)malloc(sizeof(char) * len)))
-			return (NULL);
-		while (++i < ft_strlen(s1))
-		{
-			str_concat[i] = s1[i];
-		}
-		while (j < ft_strlen(s2))
-			str_concat[i++] = s2[j++];
-		str_concat[i] = '\0';
-		free(s1);
-		return (str_concat);
-	}
-	return (NULL);
+	if (!(s1 && s2 && (str = ft_strnew(ft_strlen(s1) + len + 1))))
+		return (NULL);
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2 && len--)
+		*str++ = *s2++;
+	return (str);
 }

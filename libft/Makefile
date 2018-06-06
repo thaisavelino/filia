@@ -6,7 +6,7 @@
 #    By: tavelino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/20 15:31:48 by tavelino          #+#    #+#              #
-#    Updated: 2018/06/06 17:46:17 by tavelino         ###   ########.fr        #
+#    Updated: 2018/06/06 18:27:51 by tavelino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ INCLUDE = ./
 SOURCE	= ft_atoi.c \
 		ft_strlen_char.c \
 		ft_strjoin_free.c \
+		ft_strnjoin_free.c \
+		ft_strnjoin.c \
 		ft_lstaddend.c \
 		ft_memcpy.c \
 		ft_putstr_fd.c \
