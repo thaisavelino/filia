@@ -6,7 +6,7 @@
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 15:00:10 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 17:57:05 by tavelino         ###   ########.fr       */
+/*   Updated: 2018/06/06 19:09:02 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		readline(char **line, int fd)
 	while ((b_read = read(fd, rest, BUFF_SIZE)) > 0 && !(position = ft_strchr(rest, '\n')))
 	{
 		*line = ft_strjoin(*line, rest);
-		printf("read line: %s\n", *line);
+		printf("strjoin(line, rest): %s\n", *line);
 	}
 	if (b_read > 0)
 	{
@@ -52,11 +52,14 @@ int		get_next_line(int const fd, char **line)
 {
 //	static char	*str;
 	int			i;
-
-	if (fd < 0 || line == NULL)
+	
+	printf("--- starting---\nfd: %d\nline: %s\n", fd, *line);
+	if (BUFF_SIZE < 1 || fd < 0 || line == NULL)
 		return (-1);
 	*line = ft_memalloc(1);
+	printf("memalloc(1) no line: %s\n", *line);
 	i = readline(line, fd);
+	printf("i: %d\n", i);
 /*	if (str[i])
 	{
 		while (str[i] != '\n' && str[i])
