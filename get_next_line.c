@@ -6,24 +6,11 @@
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 15:00:10 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 16:44:24 by tavelino         ###   ########.fr       */
+/*   Updated: 2018/06/06 16:50:00 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		checkerror(int fd, char **line)
-{
-	if (fd < 0 || line == NULL)
-		return (-1);
-//	if (!*str)
-//	{
-//		if (!(*str = (char*)malloc(sizeof(char) * (BUFF_SIZE + 1))))
-//			return (-1);
-//	}
-	return (0);
-}
-
 #include <stdio.h>
 
 int		readline(char **line, int fd)
@@ -66,11 +53,8 @@ int		get_next_line(int const fd, char **line)
 //	static char	*str;
 	int			i;
 
-	if (checkerror(fd, line) == -1)
+	if (fd < 0 || line == NULL)
 		return (-1);
-//	if (*str)
-//		ft_strcpy(*line, str);
-	// se nao da esse espaco pro line nao da nada de resultado.. estranho pq ?
 	*line = ft_memalloc(1);
 	i = readline(line, fd);
 /*	if (str[i])
@@ -78,7 +62,7 @@ int		get_next_line(int const fd, char **line)
 		while (str[i] != '\n' && str[i])
 			i++
 		if (i == 0)
-			(*line) = ft_strdup("");
+			(*line) = '\0';
 		else
 		{
 			(*line) = ft_strsub(str, 0, i);
@@ -87,6 +71,6 @@ int		get_next_line(int const fd, char **line)
 		return (1);
 	}
 	else
-		(*line) = ft_strdup("");*/
+		(*line) = '\0';*/
 	return (i);
 }
