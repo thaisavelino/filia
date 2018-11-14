@@ -13,7 +13,7 @@ make -C libft
 ```
 - Compile the project by running gcc command from **get_next_line** directory:
 ```
-gcc -Wall -Werror -Wextra get_next_line.c main.c libft/libft.a
+gcc -Wall -Werror -Wextra get_next_line.c get_next_line.h main.c libft/libft.a
 ```
 
 ### How to test

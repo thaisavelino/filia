@@ -5,75 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tavelino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/30 15:00:10 by tavelino          #+#    #+#             */
-/*   Updated: 2018/06/06 19:09:02 by tavelino         ###   ########.fr       */
+/*   Created: 2018/10/14 20:28:29 by tavelino          #+#    #+#             */
+/*   Updated: 2018/11/14 23:25:44 by tavelino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-int		readline(char **line, int fd)
+static int		gnl_rest(char buf[BUFF_SIZE + 1], size_t len, char *line)
 {
-	static char	*rest;
-	int			b_read;
-	char		*position;
-
-	//TODO: Protect strnew
-	if (!rest)
-		rest = ft_strnew(BUFF_SIZE);
-	else if ((position = ft_strchr(rest, '\n')))
+	if (!buf[0] && line[0])
+		buf[0] = '\0';
+	else
 	{
-		*position = '\0'; //troca \n por vazio:
-		*line = ft_strjoin(*line, rest);
-		rest = ft_strdup(position + 1);
-		return (1);
+		ft_strncpy(buf, &buf[len + 1], BUFF_SIZE + 1);
 	}
-	/* tentei arrumar esse while mas ta meio bosta*/
-	*line = ft_strjoin(*line, rest);
-//	printf("rest: %s\n", rest);
-	while ((b_read = read(fd, rest, BUFF_SIZE)) > 0 && !(position = ft_strchr(rest, '\n')))
-	{
-		*line = ft_strjoin(*line, rest);
-		printf("strjoin(line, rest): %s\n", *line);
-	}
-	if (b_read > 0)
-	{
-		*position = '\0';
-		*line = ft_strjoin(*line, rest);
-		rest = ft_strdup(position + 1);
-		return (1);
-	}
-	free(rest);
-	return (b_read);
+	return (1);
 }
 
-int		get_next_line(int const fd, char **line)
+int				get_next_line(int const fd, char **line)
 {
-//	static char	*str;
-	int			i;
-	
-	printf("--- starting---\nfd: %d\nline: %s\n", fd, *line);
-	if (BUFF_SIZE < 1 || fd < 0 || line == NULL)
+	int			b_read;
+	char		*tmp;
+	size_t		len;
+	static char	buf[OPEN_MAX][BUFF_SIZE + 1];
+
+	if (BUFF_SIZE <= 0 || fd < 0 || !line || !(*line = ft_strnew(1))
+			|| fd > OPEN_MAX)
 		return (-1);
-	*line = ft_memalloc(1);
-	printf("memalloc(1) no line: %s\n", *line);
-	i = readline(line, fd);
-	printf("i: %d\n", i);
-/*	if (str[i])
+	b_read = 1;
+	while (b_read > 0)
 	{
-		while (str[i] != '\n' && str[i])
-			i++
-		if (i == 0)
-			(*line) = '\0';
-		else
-		{
-			(*line) = ft_strsub(str, 0, i);
-			str = &str[i + 1];
-		}
-		return (1);
+		if (!buf[fd][0])
+			b_read = read(fd, &buf[fd], BUFF_SIZE);
+		if (b_read < 0)
+			return (b_read);
+		len = ft_strlen_char(buf[fd], '\n');
+		tmp = *line;
+		*line = ft_strnjoin(tmp, buf[fd], len);
+		ft_strdel(&tmp);
+		if ((*line && buf[fd][len]) || (!buf[fd][0] && *line[0]))
+			return (gnl_rest(buf[fd], len, *line));
+		ft_strclr((char *)&buf[fd]);
 	}
-	else
-		(*line) = '\0';*/
-	return (i);
+	return (0);
 }

@@ -1,5 +1,0 @@
-primeira linha
-segunda linha
-
-terceira linha 2 \n
-
