@@ -73,7 +73,7 @@ get_next_line will wait for input on `stdin`
 
 *** 
 
-## More Details
+## About the function
 
 ## Prototype
 ```
