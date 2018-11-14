@@ -1,30 +1,21 @@
 #include <stdio.h>
-#include <fcntl.h>
 #include "get_next_line.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-/* Testing 1 FD */
-
-int		main(int argc, char **argv)
+int	main(void)
 {
 	int		fd;
+	int		ret;
 	char	*line;
-	int		print_ret;
-	int		i;
 
-	fd = 1;
-	if (argc >= 2)
+	fd = open(fd, O_RDONLY);
+	while ((ret = get_next_line(fd, &line)) > 0)
 	{
-		if (access(argv[1], F_OK) == 0)
-		{
-			i = 0;
-			fd = open(argv[1], O_RDONLY);
-			while((print_ret = get_next_line(fd, &line)) == 1)
-			{
-				i++;
-				printf("\nReturn main %d\nline %s\n", print_ret, line);
-			}
-			close(fd);
-		}	
+		//printf("%s\n", line);
+		printf("\nReturn main %d\nline %s\n", ret, line);
 	}
-	return (1);
+	close(fd);
+	free(line);
+	return (0);
 }
