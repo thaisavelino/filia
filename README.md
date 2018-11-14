@@ -75,7 +75,7 @@ get_next_line will wait for input on `stdin`
 
 ## About the function
 
-## Prototype
+### Prototype
 ```
 get_next_line(int const fd, char **line)
 ```
