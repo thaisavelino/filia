@@ -94,6 +94,8 @@ First it tests if there was no error while processing the **fd** and there is a 
 #OBS
 get_next_line should be able to fetch lines as long as you're reading from **files that can be accesed**.
 
+***
+
 # You want to make your own get_next_line?
 
 That's great!
