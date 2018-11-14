@@ -1,11 +1,11 @@
 # Get next line
 A school 42 project.
 
- ### Score 124/100
+ ### Score 125/100
  **Mandatory**
  100/100 
  **Bonus**
- 24/25
+ 25/25
 
 **Note** *This project is not beeing updated. Check get_next_line inside my personal C library [libft](https://github.com/tavelino/libft "libft, a project from school 42"). Where you can use this and other functions by including libft.a.*
 
@@ -25,7 +25,7 @@ For more details regarding the project see 'school42-files/get_next_line.en.pdf'
  - max 4 arguments per function
  - no memory leaks, no segmentation faults, no exceptions
  - No use of C Standard Library functions besides `read`, `malloc` and `free`. Everything else is forbidden.
-	- etc
+ - etc
  
 	Check the norms at the folder `school42-files/norm.pdf`
  
