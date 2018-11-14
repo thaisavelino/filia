@@ -16,7 +16,7 @@ The bonus from this project is just use one static variable and handling multipl
 
 Get_next_line behaves like `cat`. But will be usefull for parsing exercizes where theres one piece of data per line.
 
-For more details regarding the project see 'school42-files/get_next_line.en.pdf'*
+*For more details regarding the project see `school42-files/get_next_line.en.pdf`*
 
 #### Restrictions to code
 
