@@ -83,7 +83,7 @@ get_next_line(int const fd, char **line)
 **line** is the line read from **fd**
 
 ### How function works
-** First it tests if there was no error while processing the **fd** and there i a line to read.
+First it tests if there was no error while processing the **fd** and there is a line to read.
 
 ### Return function
  - **1** if a line WAS read
