@@ -12,7 +12,7 @@ A school 42 project.
 ### About the project
 
 The challange here is to create a function that read and return every line from a file descriptor each time the function is called.
-The bonus from this project is just one static variable and handling multiple file descriptors without losing thread of reading on any.
+The bonus from this project is just use one static variable and handling multiple file descriptors **without losing thread of reading on any.**
 
 Get_next_line behaves like `cat`. But will be usefull for parsing exercizes where theres one piece of data per line.
 
