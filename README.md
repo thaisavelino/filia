@@ -19,7 +19,8 @@ Get_next_line behaves like `cat`. But will be usefull for parsing exercizes wher
 For more details regarding the project see 'school42-files/get_next_line.en.pdf'*
 
 #### Restrictions to code
-	This function must respect school 42 norms:
+
+This function must respect school 42 norms:
  - Only use While loops
  - max 25 lines per function (max 84 characters per line)
  - max 4 arguments per function
@@ -27,7 +28,7 @@ For more details regarding the project see 'school42-files/get_next_line.en.pdf'
  - No use of C Standard Library functions besides `read`, `malloc` and `free`. Everything else is forbidden.
  - etc
  
-	Check the norms at the folder `school42-files/norm.pdf`
+Check the norms at the folder `school42-files/norm.pdf`
  
 ***
 
@@ -50,9 +51,9 @@ gcc -Wall -Werror -Wextra get_next_line.c get_next_line.h main.c libft/libft.a
 
 After compile you can run the a.out giving a file as a parameter.
 
-	  ```console
-	  ./a.out [input_file]
-	  ```
+```console
+./a.out [input_file]
+```
 Example:
 
   ```console
