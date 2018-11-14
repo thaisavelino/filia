@@ -1,32 +1,78 @@
 # Get next line
 A school 42 project.
-For more details regarding the project see 'get_next_line - Subject(EN).pdf'
 
-### Score 124/100
-##### Mandatory
-100/100
-##### Bonus
-24/25
+ ### Score 124/100
+ ##### Mandatory
+ 100/100 
+ ##### Bonus
+ 24/25
+
+**Note** *This project is not beeing updated. Check get_next_line inside my personal C library [libft](https://github.com/tavelino/libft "libft, a project from school 42"). Where you can use this and other functions by including libft.a.*
+
+### About the project
+
+	The challange here is to create a function that read and return every line from a file descriptor each time the function is called.
+    The bonus from this project is just one static variable and handling multiple file descriptors without losing thread of reading on any.
+
+	 Get_next_line behaves like `cat`. But will be usefull for parsing exercizes where theres one piece of data per line.
+
+	 For more details regarding the project see 'school42-files/get_next_line.en.pdf'*
+
+#### Restrictions to code
+	This function must respect school 42 norms:
+ - Only use While loops
+ - max 25 lines per function (max 84 characters per line)
+ - max 4 arguments per function
+ - no memory leaks, no segmentation faults, no exceptions
+ - No use of C Standard Library functions besides `read`, `malloc` and `free`. Everything else is forbidden.
+	- etc
+ 
+	Check the norms at the folder `school42-files/norm.pdf`
+ 
+***
 
 ## How to use
 
-Using the terminal run the commands bellow.
+The project must be submitted without both a Makefile and a main. A main has been supplied but you can use your own.
 
-- Create the library **libft.a** by running the command bellow at **libft** directory:
+To compile use the terminal and run the commands bellow at **get_next_line** directory.
+
+- First create the library **libft.a** by running the command:
+```console
+make -C libft/ fclean && make -C libft/
 ```
-make -C libft
-```
-- Compile the project by running gcc command from **get_next_line** directory:
-```
+- Compile the project by running gcc command:
+```console
 gcc -Wall -Werror -Wextra get_next_line.c get_next_line.h main.c libft/libft.a
 ```
 
 ### How to test
 
-After compile you can run a.out with your file to test.
-```
-.a.out test1.txt
-```
+After compile you can run the a.out giving a file as a parameter.
+
+	  ```console
+	  ./a.out [input_file]
+	  ```
+Example:
+
+  ```console
+  .a.out main.c
+  ```
+
+It must be the same result as:
+
+   ```console
+   cat main.c
+   ```
+
+#### Use get_next_line with input on stdin
+
+If you modify the main to call `get_next_line` with `fd` parameter set to 0, 
+get_next_line will wait for input on `stdin`
+
+*** 
+
+## More Details
 
 ## Prototype
 ```
@@ -47,15 +93,10 @@ get_next_line(int const fd, char **line)
 #OBS
 get_next_line should be able to fetch lines as long as you're reading from **files that can be accesed**.
 
-# How to test
-
-After compile you can run a.out with your file to test.
-```
-.a.out test1.txt
-```
-
-# I want to make my own get_next_line
+# You want to make your own get_next_line?
 
 That's great!
-If you need to test your own implementation of get_next_line you can use:
+If you need to test your own implementation you can use:
 @jgigault's [42FileChecker](https://github.com/jgigault/42FileChecker)
+
+Bon courage!
