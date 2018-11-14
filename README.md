@@ -1,7 +1,12 @@
 # Get next line
 A school 42 project.
-
 For more details regarding the project see 'get_next_line - Subject(EN).pdf'
+
+### Score 124/100
+##### Mandatory
+100/100
+##### Bonus
+24/25
 
 ## How to use
 
