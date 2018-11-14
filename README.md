@@ -2,21 +2,21 @@
 A school 42 project.
 
  ### Score 124/100
- ##### Mandatory
+ **Mandatory**
  100/100 
- ##### Bonus
+ **Bonus**
  24/25
 
 **Note** *This project is not beeing updated. Check get_next_line inside my personal C library [libft](https://github.com/tavelino/libft "libft, a project from school 42"). Where you can use this and other functions by including libft.a.*
 
 ### About the project
 
-	The challange here is to create a function that read and return every line from a file descriptor each time the function is called.
-    The bonus from this project is just one static variable and handling multiple file descriptors without losing thread of reading on any.
+The challange here is to create a function that read and return every line from a file descriptor each time the function is called.
+The bonus from this project is just one static variable and handling multiple file descriptors without losing thread of reading on any.
 
-	 Get_next_line behaves like `cat`. But will be usefull for parsing exercizes where theres one piece of data per line.
+Get_next_line behaves like `cat`. But will be usefull for parsing exercizes where theres one piece of data per line.
 
-	 For more details regarding the project see 'school42-files/get_next_line.en.pdf'*
+For more details regarding the project see 'school42-files/get_next_line.en.pdf'*
 
 #### Restrictions to code
 	This function must respect school 42 norms:
