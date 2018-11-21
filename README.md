@@ -103,3 +103,6 @@ If you need to test your own implementation you can use:
 @jgigault's [42FileChecker](https://github.com/jgigault/42FileChecker)
 
 Bon courage!
+
+### Check my Projects
+To check more projects go to my [Portfolio page](https://github.com/thaisavelino/Portfiolio_42_SiliconValley_Paris)
